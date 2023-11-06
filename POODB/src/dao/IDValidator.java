@@ -1,4 +1,4 @@
-package DAO;
+package dao;
 
 public class IDValidator {
 	private static final int MIN_ID = 150000;

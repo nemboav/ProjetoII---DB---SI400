@@ -1,4 +1,4 @@
-package DAO;
+package dao;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -86,12 +86,10 @@ public class InMemoryCustomerDAO extends CustomerDAO {
         return foundCustomer;
     }
 
-	@Override
-	public List<Customer> getAllCustomersOrderedById() throws SQLException {
-		List<Customer> customers = new ArrayList<>();
+    @Override
+    public List<Customer> getAllCustomersOrderedById() throws SQLException {
+        List<Customer> customers = new ArrayList<>();
         customers.addAll(databaseRef.getCustomerList());
         return customers;
-	}
-
-
+    }
 }
