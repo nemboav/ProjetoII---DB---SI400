@@ -99,7 +99,7 @@ public class DBCustomerDAO extends CustomerDAO {
     @Override
     public void deleteCustomerById(int customerId) throws SQLException {
         String query = "DELETE FROM Customer WHERE id = ?";
-
+        //if
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setInt(1, customerId);
             preparedStatement.executeUpdate();
