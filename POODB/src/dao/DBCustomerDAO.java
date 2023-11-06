@@ -72,14 +72,15 @@ public class DBCustomerDAO extends CustomerDAO {
     public void addCustomer(Customer customer) throws SQLException {
         String query = "INSERT INTO Customer (name, city, state) VALUES (?, ?, ?)";
 
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-            preparedStatement.setString(1, customer.getName());
-            preparedStatement.setString(2, customer.getCity());
-            preparedStatement.setString(3, customer.getState());
-
-            preparedStatement.executeUpdate();
+	        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+	            preparedStatement.setString(1, customer.getName());
+	            preparedStatement.setString(2, customer.getCity());
+	            preparedStatement.setString(3, customer.getState());
+	
+	            preparedStatement.executeUpdate();
+	        }
         }
-    }
+    
 
     @Override
     public void updateCustomer(Customer customer) throws SQLException {
